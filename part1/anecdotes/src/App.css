@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+}
