@@ -1,4 +1,4 @@
 export default interface IPart {
-    part: string;
+    name: string;
     exercises: number
 }
