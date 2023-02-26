@@ -1,0 +1,16 @@
+.app {
+  display:flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1em;
+}
+
+label > input {
+  margin-left: 1em;
+}
