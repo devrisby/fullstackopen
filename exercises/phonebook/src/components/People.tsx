@@ -3,12 +3,13 @@ import Person from "./Person";
 
 interface PropTypes {
     people: Array<IPerson>;
+    handleDelete: (person:IPerson) => void
 }
 
-const People = ({people}: PropTypes) => {
+const People = ({people, handleDelete }: PropTypes) => {
     return (
         <div>
-            {people.map((p) => <Person key={p.id} name={p.name} phone={p.phone} />)}
+            {people.map((p) => <Person key={p.id} person={p} handleDelete={handleDelete} />)}
         </div>
     )
 }

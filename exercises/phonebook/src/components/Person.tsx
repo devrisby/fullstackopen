@@ -1,9 +1,21 @@
 import IPerson from "../type/IPerson"
+import Button from "./Button"
 
-const Person = ({name, phone}: {name: string, phone: string}) => {
+interface PropTypes {
+    person: IPerson;
+    handleDelete: (person:IPerson) => void
+}
+
+const Person = ({person, handleDelete}: PropTypes ) => {
     return (
-        <div>
-            <p>{name} {phone}</p>
+        <div className="person">
+            <div>
+                <p className="name">{person.name}</p>
+                <p>{person.phone}</p>
+            </div>
+            <div>
+                <Button label="delete" action={() => handleDelete(person)} type={undefined} />
+            </div>
         </div>
     )
 }

@@ -6,8 +6,12 @@ interface PropTypes {
 const Search = ({search, searchOnChangeHandler}: PropTypes) => {
     return (
         <label>
-            Filter:
-            <input type="text" value={search} onChange={searchOnChangeHandler} />
+            <div>
+                <p>Filter:</p>
+            </div>
+            <div>
+                <input type="text" value={search} onChange={searchOnChangeHandler} />
+            </div>
         </label>
     )
 }

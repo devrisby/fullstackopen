@@ -11,14 +11,22 @@ interface PropTypes {
 
 const Form = ({name, nameOnChangeHandler,phone, phoneOnChangeHandler, onSubmitHandler}: PropTypes) => {
     return (
-        <form onSubmit={onSubmitHandler}>
+        <form className="add_contact" onSubmit={onSubmitHandler}>
             <label>
-                name:
-                <input type="text" value={name} onChange={nameOnChangeHandler} />
+                <div>
+                    <p>name:</p>
+                </div>
+                <div>
+                    <input type="text" value={name} onChange={nameOnChangeHandler} />
+                </div>
             </label>
             <label>
-                number:
-                <input type="text" value={phone} onChange={phoneOnChangeHandler} />
+                <div>
+                    <p>number:</p>
+                </div>
+                <div>
+                    <input type="text" value={phone} onChange={phoneOnChangeHandler} />
+                </div>
             </label>
             <Button label="add" type="submit"/>
         </form>
