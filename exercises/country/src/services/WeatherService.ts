@@ -8,7 +8,9 @@ const getWeather = async (country: ICountry) => {
     
     const url = baseURL + `lat=${country.capitalLat}&lon=${country.capitalLong}&appid=${api_key}`
     console.log("API KEY", api_key, "\nURL", url);
+    console.log("country:", country)
     const response = (await axios.get(url)).data
+    console.log("temp", response.main.temp)
     return {
         temp: response.main.temp,
         windSpeed: response.wind.speed,

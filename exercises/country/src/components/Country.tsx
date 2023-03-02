@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ICountry from "../types/ICountry";
 import IWeather from "../types/IWeather";
 import WeatherService from '../services/WeatherService'
@@ -8,16 +8,17 @@ interface PropTypes {
 }
 
 const Country = ({country}: PropTypes) => {
-    var weather: IWeather = {
+
+    const [weather, setWeather] = useState({
         temp: 0.0,
         windSpeed: 0.0,
         icon: ''
-    };
+    })
 
     useEffect(() => {
         const fetchData = async() => {
             if(country.capital){
-                weather = await WeatherService.getWeather(country);
+                setWeather(await WeatherService.getWeather(country));
             }
         }
 

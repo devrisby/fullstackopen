@@ -7,6 +7,8 @@ const getAll = async () => {
 
     // @ts-ignore
     return allCountries.map(c => {
+        // console.log("capitalInfo", c.capitalInfo.latlng[0]);
+
         return {
             "name": c.name.common,
             "capital": c.capital? c.capital[0]: 'N/A',
@@ -14,8 +16,8 @@ const getAll = async () => {
             "languages": c.languages ? Object.values(c.languages): [],
             "flag": c.flags.png,
             "flagAlt": c.flags.alt,
-            "capitalLat": c.capitalInfo ? c.capitalInfo[0]: -1,
-            "capitalLong": c.capitalInfo ? c.capitalInfo[1]: -1,
+            "capitalLat": c.capitalInfo.latnlng ? c.capitalInfo.latlng[0]: -1,
+            "capitalLong": c.capitalInfo.latnlng ? c.capitalInfo.latlng[1]: -1,
         }
     })
 }
