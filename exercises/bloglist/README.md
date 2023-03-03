@@ -52,3 +52,11 @@ app.listen(PORT, () => {
 
 - Connect app to MongoDB 
 - Verify blog can be added and retrieved from API
+- Create Jest unit tests
+
+### Notes
+
+**Setting up Jest for Typescript**
+- `npm install --save-dev ts-jest`
+- `npm install --save-dev @types/jest`
+- `npx ts-jest config:init`
