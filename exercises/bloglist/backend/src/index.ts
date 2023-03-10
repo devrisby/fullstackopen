@@ -3,8 +3,8 @@ import { startDb } from './data/db'
 import * as config from './common/config'
 
 const main = async () => {
-  startServer(config.PORT, config.CLIENT_PORT)
-  await startDb(config.MONGO_URI!)
+  startServer(config.PORT)
+  await startDb(config.getMongoUri()!)
 }
 
 main().catch(e => {

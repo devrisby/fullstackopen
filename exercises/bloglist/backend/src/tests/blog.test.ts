@@ -1,6 +1,5 @@
 import listHelper from '../utils/list_helper'
 import blogsData from './blogsData'
-import testBlogs from './blogsData'
 
 test('dummy returns one', () => {
     const blogs: any[] = []
