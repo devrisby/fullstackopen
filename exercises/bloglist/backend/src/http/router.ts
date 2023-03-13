@@ -1,6 +1,9 @@
 import express from 'express'
 import { mongoHealth } from '../data/db'
 import blogRouter from '../modules/blogs/blogController'
+import userRouter from '../modules/users/userController'
+import authRouter from '../modules/auth/auth.controller'
+
 
 const router = express.Router()
 
@@ -17,5 +20,7 @@ router.get('/api/health', async (req, res) => {
 })
 
 router.use('/api/blogs', blogRouter);
+router.use('/api/users', userRouter)
+router.use('/api/auth', authRouter)
 
 export default router

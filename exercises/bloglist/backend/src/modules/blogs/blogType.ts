@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { IUser } from "../users/userType";
 
 export interface IBlog {
     _id?: mongoose.Schema.Types.ObjectId | string;
@@ -8,4 +9,5 @@ export interface IBlog {
     url: string;
     likes: number;
     __v?: number;
+    user?: IUser
 }

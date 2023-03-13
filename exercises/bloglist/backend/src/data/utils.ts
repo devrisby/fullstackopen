@@ -1,14 +1,18 @@
 import mongoose, { Schema } from 'mongoose'
 
-const modelFactory = <T>(name: string, paths: any) => {
+const modelFactory = <T>(name: string, paths: any, props?: string[]) => {
     const transformer = {
       transform: (
         _doc: mongoose.Document,
-        result: { id: any; _id: any; __v: any }
+        result: any
       ) => {
         result.id = result._id.toString()
         delete result._id
         delete result.__v
+
+        if(props){
+          props.forEach(p => delete result[p])
+        }
       },
     }
   

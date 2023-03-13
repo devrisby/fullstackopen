@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 import { modelFactory } from '../../data/utils'
 import { IBlog } from './blogType'
 
@@ -9,6 +9,10 @@ const blogSchema = new Schema<IBlog>({
     likes: {
         type: Number,
         default: 0
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 })
 

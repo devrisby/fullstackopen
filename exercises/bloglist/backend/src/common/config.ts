@@ -4,6 +4,7 @@ dotenv.config()
 
 const PORT = process.env.PORT ?? '5000'
 const CLIENT_PORT = process.env.CLIENT_PORT ?? '3000'
+const JWT_SECRET = process.env.JWT_SECRET ?? 'secret'
 
 const getMongoUri = () => {
   switch(process.env.NODE_ENV) {
@@ -16,4 +17,4 @@ const getMongoUri = () => {
   }
 }
 
-export { PORT, CLIENT_PORT, getMongoUri }
+export { PORT, CLIENT_PORT, getMongoUri, JWT_SECRET }
